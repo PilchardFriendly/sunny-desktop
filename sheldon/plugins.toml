@@ -25,6 +25,9 @@ github = "romkatv/zsh-defer"
 [plugins.oh-my-zsh]
 github = "ohmyzsh/ohmyzsh"
 
+[plugins.completions]
+github = "zsh-users/zsh-completions"
+
 # [plugins.docker-zsh-completion]
 # github = "greymd/docker-zsh-completion"
 
@@ -40,7 +43,15 @@ apply = ["defer"]
 [plugins.ohmyzsh-plugins]
 github = "ohmyzsh/ohmyzsh"
 dir = "plugins"
-use = ["{copybuffer,git,direnv,pip}/*.plugin.zsh"]
+use = ["{copybuffer,git,direnv,pip,fzf,command-not-found}/*.plugin.zsh"]
+apply = ["defer"]
+
+[plugins.fzftab]
+github = "Aloxaf/fzf-tab"
+apply = ["defer"]
+
+[plugins.fzfmarks]
+github = "urbainvaes/fzf-marks"
 apply = ["defer"]
 
 [plugins.zsh-autosuggestions]
@@ -54,5 +65,9 @@ apply = ["defer"]
 
 [plugins.spaceship]
 github = "spaceship-prompt/spaceship-prompt"
+
+[plugins.asdf]
+github = "asdf-vm/asdf"
+
 
 
