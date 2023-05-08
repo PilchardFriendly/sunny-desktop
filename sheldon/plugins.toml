@@ -12,9 +12,47 @@
 
 shell = "zsh"
 
+[templates]
+defer = "{% for file in files %}zsh-defer source \"{{ file }}\"\n{% endfor %}"
+
+
 [plugins]
 
-# For example:
-#
-# [plugins.base16]
-# github = "chriskempson/base16-shell"
+
+[plugins.zsh-defer]
+github = "romkatv/zsh-defer"
+
+[plugins.oh-my-zsh]
+github = "ohmyzsh/ohmyzsh"
+
+# [plugins.docker-zsh-completion]
+# github = "greymd/docker-zsh-completion"
+
+# [plugins.rust-zsh-completions]
+# github = "ryutok/rust-zsh-completions"
+
+[plugins.ohmyzsh-lib]
+github = "ohmyzsh/ohmyzsh"
+dir = "lib"
+use = ["{clipboard,completion,git,key-bindings,termsupport,theme-and-appearance}.zsh"]
+apply = ["defer"]
+
+[plugins.ohmyzsh-plugins]
+github = "ohmyzsh/ohmyzsh"
+dir = "plugins"
+use = ["{copybuffer,git,direnv,pip}/*.plugin.zsh"]
+apply = ["defer"]
+
+[plugins.zsh-autosuggestions]
+github = "zsh-users/zsh-autosuggestions"
+use = ["{{ name }}.zsh"]
+apply = ["defer"]
+
+[plugins.zsh-syntax-highlighting]
+github = 'zsh-users/zsh-syntax-highlighting'
+apply = ["defer"]
+
+[plugins.spaceship]
+github = "spaceship-prompt/spaceship-prompt"
+
+
