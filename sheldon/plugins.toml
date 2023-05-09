@@ -69,5 +69,7 @@ github = "spaceship-prompt/spaceship-prompt"
 [plugins.asdf]
 github = "asdf-vm/asdf"
 
-
+[plugins.set-java-home]
+local = "~/.asdf/plugins/java"
+apply = ["defer"]
 
